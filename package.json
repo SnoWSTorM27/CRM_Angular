@@ -1,0 +1,31 @@
+{
+  "name": "crm_angular",
+  "version": "1.0.0",
+  "description": "Fullstack app CRM(angular and express)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "server": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SnoWSTorM27/CRM_Angular.git"
+  },
+  "keywords": [
+    "angular",
+    "express"
+  ],
+  "author": "Chepaykin Evgeny",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SnoWSTorM27/CRM_Angular/issues"
+  },
+  "homepage": "https://github.com/SnoWSTorM27/CRM_Angular#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
