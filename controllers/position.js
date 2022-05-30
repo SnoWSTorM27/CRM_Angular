@@ -1,15 +1,17 @@
-module.exports.getByCategoryId = function(req, res) {
+const db = require('../db')
+
+module.exports.getByCategoryId = async function(req, res) {
   
 }
 
-module.exports.create = function(req, res) {
+module.exports.create = async function(req, res) {
   
 }
 
-module.exports.remove = function(req, res) {
+module.exports.remove = async function(req, res) {
   
 }
 
-module.exports.update = function(req, res) {
+module.exports.update = async function(req, res) {
   
 }

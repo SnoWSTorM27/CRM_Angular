@@ -9,7 +9,7 @@ create TABLE Users(
 create TABLE Categories(
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  imageSrc VARCHAR(255) DEFAULT '',
+  imageSrc VARCHAR DEFAULT '',
   user_id INTEGER,
   FOREIGN KEY (user_id) REFERENCES Users(id)
 ); 
