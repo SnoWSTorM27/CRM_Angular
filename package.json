@@ -22,12 +22,16 @@
   },
   "homepage": "https://github.com/SnoWSTorM27/CRM_Angular#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
     "chalk": "^4.1.2",
     "cors": "^2.8.5",
     "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.4",
     "morgan": "^1.10.0",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.0",
     "pg": "^8.7.3",
     "psql": "^0.0.1"
   },

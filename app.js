@@ -1,11 +1,15 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const passport = require('passport')
 const authRoutes = require('./routes/auth')
 const analyticsRoutes = require('./routes/analytics')
 const categoryRoutes = require('./routes/category')
 const orderRoutes = require('./routes/order')
 const positionRoutes = require('./routes/position')
 const app = express()
+
+app.use(passport.initialize())
+require('./middleware/passport')(passport)
 
 
 app.use(require('morgan')('dev'))

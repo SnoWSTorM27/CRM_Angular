@@ -26,7 +26,7 @@ module.exports.create = async function(req, res) {
 module.exports.update = async function(req, res) {
   const {name, imageSrc, user_id} = req.body
   const id = req.params.id
-  const category = await db.query(`UPDATE Categories set id = $1, name = $2, imageSrc = $3, user_id = $4 RETURNING *`, [id, name, imageSrc, user_id]);
+  const category = await db.query(`UPDATE Categories set name = $2, imageSrc = $3, user_id = $4 where id=$1 RETURNING *`, [id, name, imageSrc, user_id]);
   res.status(202).json(category.rows[0])
 
 }
