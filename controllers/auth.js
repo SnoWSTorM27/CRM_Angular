@@ -10,7 +10,6 @@ module.exports.login = async function (req, res) {
   if (candidate) {
     const candidatePassowrd = (await db.query(`SELECT (password) FROM Users WHERE email = $1`, [email])).rows[0]?.password;
     const user_id = (await db.query(`SELECT (id) FROM Users WHERE email = $1`, [email])).rows[0]?.id;
-    console.log('user_id:' , user_id);
     const passwordResult = bcrypt.compareSync(password, candidatePassowrd)
     if (passwordResult) {
       
