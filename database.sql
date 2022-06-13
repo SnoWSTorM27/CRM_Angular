@@ -9,15 +9,15 @@ create TABLE Users(
 create TABLE Categories(
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  imageSrc VARCHAR DEFAULT '',
+  imagesrc VARCHAR DEFAULT null,
   user_id INTEGER,
   FOREIGN KEY (user_id) REFERENCES Users(id)
 ); 
 
 create TABLE Positions(
   id SERIAL PRIMARY KEY,
-  name VARCHAR(255) NOT NULL UNIQUE,
-  cost INTEGER NOT NULL UNIQUE,
+  name VARCHAR(255) NOT NULL,
+  cost INTEGER NOT NULL,
   category_id INTEGER,
   FOREIGN KEY (category_id) REFERENCES Categories(id),
   user_id INTEGER,

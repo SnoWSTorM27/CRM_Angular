@@ -5,7 +5,7 @@ module.exports.getByCategoryId = async function(req, res) {
   try {
     const category_id = req.params.categoryId
     const user_id = req.user.id
-    const positions = await db.query(`SELECT * FROM Positions where category_id = $1, user_id = $2`, [category_id, user_id]);
+    const positions = await db.query(`SELECT * FROM Positions where category_id = $1`, [category_id]);
     res.status(200).json(positions.rows)
   } catch (e) {
     errorHandler(res, e)
