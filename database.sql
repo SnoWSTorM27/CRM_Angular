@@ -25,18 +25,19 @@ create TABLE Positions(
 ); 
 
 create TABLE Orders(
-  id INTEGER UNIQUE,
-  order_date DATE NOT NULL DEFAULT CURRENT_DATE,
+  id SERIAL PRIMARY KEY,
+  order_number INTEGER UNIQUE,
+  order_date TIMESTAMP NOT NULL DEFAULT (now()),
+  total_price INTEGER,
   user_id INTEGER,
   FOREIGN KEY (user_id) REFERENCES Users(id)
 ); 
 
-create TABLE Sales(
+create TABLE OrderPositions(
+  id SERIAL PRIMARY KEY,
   order_id INTEGER,
-  FOREIGN KEY (order_id) REFERENCES Orders(id),
-  name_sale VARCHAR(255) NOT NULL,
-  FOREIGN KEY (name_sale) REFERENCES Positions(name),
-  quantity INTEGER NOT NULL DEFAULT 1,
-  cost_sale INTEGER NOT NULL,
-  FOREIGN KEY (cost_sale) REFERENCES Positions(cost)
+  FOREIGN KEY (order_id) REFERENCES Orders(order_number),
+  name VARCHAR(255) NOT NULL,
+  quantity INTEGER NOT NULL,
+  cost INTEGER NOT NULL
 ); 

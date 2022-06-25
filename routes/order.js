@@ -5,6 +5,7 @@ const router = express.Router()
 
 
 router.get('/', passport.authenticate('jwt', {session: false}), controller.getAll)
+router.get('/:order_number', passport.authenticate('jwt', {session: false}), controller.getByOrder)
 router.post('/', passport.authenticate('jwt', {session: false}), controller.create)
 
 
